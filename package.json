@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-api-performance-optimization",
+  "version": "1.0.0",
+  "description": "Node.js API optimization case study — reduced response time from ~800ms to ~120ms by fixing N+1 queries, adding indexes, and optimizing data fetching.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --legacy-watch server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-personal:sayyedaaman2/nodejs-api-performance-optimization.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
+    "mongoose": "^9.3.3",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

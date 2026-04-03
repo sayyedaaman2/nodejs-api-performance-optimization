@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: node_api_test
+    env_file:
+      - .env.test
+    depends_on:
+      - mongo
+    command: npm run test
+
+  mongo:
+    image: mongo
+    container_name: mongodb_test
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_test_data:/data/db
+
+volumes:
+  mongo_test_data:
