@@ -4,6 +4,8 @@ services:
   app:
     build: .
     container_name: node_api_test
+    ports:
+    - "8000:8000"
     env_file:
       - .env.test
     depends_on:

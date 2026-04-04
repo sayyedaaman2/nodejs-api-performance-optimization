@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "./config/env.js";
 import express from 'express';
 
 import {connectDB} from './lib/database.js'
