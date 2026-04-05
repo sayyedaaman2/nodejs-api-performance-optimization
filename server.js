@@ -7,11 +7,13 @@ import {corsSetup} from './middleware/corsMiddleware.js'
 import { globalErrorHandler } from './middleware/errorHandler.js'
 import { logger } from './middleware/loggerMiddleware.js';
 import { appLogger } from './util/logger.js';
-
-
+import rootRoutes from './route/index.js'
+import seed from './script/seed.js'
 async function serverStart() {
     try {
         await connectDB();
+        // Initial data
+        // seed();
         // express instance
         const app = express();
 
@@ -33,7 +35,8 @@ async function serverStart() {
                 message: "PONG"
             })
         })
-
+        
+        app.use(rootRoutes);
         // global error handler
         app.use(globalErrorHandler)
 
