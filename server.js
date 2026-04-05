@@ -9,6 +9,7 @@ import { logger } from './middleware/loggerMiddleware.js';
 import { appLogger } from './util/logger.js';
 import rootRoutes from './route/index.js'
 import seed from './script/seed.js'
+import { limiter } from "./middleware/rateLimitMiddleware.js";
 async function serverStart() {
     try {
         await connectDB();
@@ -19,6 +20,8 @@ async function serverStart() {
 
         // middleware
         app.use(corsSetup());
+        // rate-limit
+        app.use(limiter) 
         // logger
         app.use(logger)
         //
