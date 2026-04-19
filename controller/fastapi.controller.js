@@ -3,7 +3,6 @@ import User from '../model/user.model.js'
 export const getUserwithProduct = async (req,res,next)=>{
     try{
         console.time("FAST_API");
-
         const userWithOrders = await User.aggregate([
             {
                 $lookup : {

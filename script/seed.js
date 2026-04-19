@@ -8,14 +8,14 @@ const seedData = async ()=>{
     try{
         await connectDB();
 
-        for(let i=0; i<500; i++){
+        for(let i=0; i<200; i++){
             const user = await User.create({
                 name : `User ${i}`,
                 email : `user${i}@test.com`,
                 password : `pass${i}`
             });
 
-            for (let j=0; j<20; j++){
+            for (let j=0; j<10; j++){
                 await Order.create({
                     product : `Product Item ${j}`,
                     price : Math.random() * 100,

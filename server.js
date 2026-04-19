@@ -2,6 +2,7 @@ import "./config/env.js";
 import express from 'express';
 
 import {connectDB} from './lib/database.js'
+import redis from './lib/redis.js'
 import serverConfig from './config/server.config.js'
 import {corsSetup} from './middleware/corsMiddleware.js'
 import { globalErrorHandler } from './middleware/errorHandler.js'
@@ -12,6 +13,7 @@ import seed from './script/seed.js'
 import { limiter } from "./middleware/rateLimitMiddleware.js";
 async function serverStart() {
     try {
+        
         await connectDB();
         // Initial data
         // seed();
