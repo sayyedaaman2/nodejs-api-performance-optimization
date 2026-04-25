@@ -30,4 +30,4 @@ const seedData = async ()=>{
         throw new Error(`Error while seeding data in database : ${error}`)
     }
 }
-export default seedData;
+seedData();

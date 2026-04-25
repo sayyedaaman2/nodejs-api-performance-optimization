@@ -1,10 +1,7 @@
 import {Router} from 'express';
-import * as SlowAPIController from '../controller/slowapi.controller.js'
-import * as FastAPIController from '../controller/fastapi.controller.js'
-import cacheMiddleware from '../middleware/cacheMiddleware.js'
+import * as UserController from '../controller/user.controller.js';
 const router = Router();
 
-router.get("/slow-api",cacheMiddleware(120), SlowAPIController.getUserwithProduct)
+router.get("/users/orders",UserController.getUserWithOrders)
 
-router.get("/fast-api", FastAPIController.getUserwithProduct)
 export default router;
